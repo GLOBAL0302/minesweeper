@@ -2,6 +2,7 @@ import './App.css';
 import {useState} from "react";
 import {SquareStatus} from "../types";
 import BigSquare from "../components/Square/BigSquare";
+import Counter from "../components/Counter/Counter";
 
 
 function App() {
@@ -28,12 +29,15 @@ function App() {
         squareCopy.clicked = true;
         squaresCopy[key] = squareCopy;
         setSquares(squaresCopy);
+
     };
 
     return (
         <div className="board">
-        <BigSquare squaresData = {squares}
-         openSquare = {openSquare}/>
+            <BigSquare squaresData = {squares}
+            openSquare = {openSquare}/>
+            <Counter value = {squares}/>
+
         </div>
     );
 }
