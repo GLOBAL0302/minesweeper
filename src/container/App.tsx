@@ -3,6 +3,7 @@ import {useState} from "react";
 import {SquareStatus} from "../types";
 import BigSquare from "../components/Square/BigSquare";
 import Counter from "../components/Counter/Counter";
+import Reset from "../components/Reset/Reset";
 
 
 function App() {
@@ -29,7 +30,10 @@ function App() {
         squareCopy.clicked = true;
         squaresCopy[key] = squareCopy;
         setSquares(squaresCopy);
+    };
 
+    const resetBoard = ()=>{
+        setSquares(data());
     };
 
     return (
@@ -37,7 +41,7 @@ function App() {
             <BigSquare squaresData = {squares}
             openSquare = {openSquare}/>
             <Counter value = {squares}/>
-
+            <Reset resetBoard = {resetBoard}/>
         </div>
     );
 }
