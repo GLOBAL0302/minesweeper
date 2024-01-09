@@ -23,7 +23,11 @@ function App() {
     }
 
     const openSquare = (key:number)=>{
-        console.log(key);
+        const squaresCopy:SquareStatus[] = [...squares!];
+        const squareCopy = {...squaresCopy[key]};
+        squareCopy.clicked = true;
+        squaresCopy[key] = squareCopy;
+        setSquares(squaresCopy);
     };
 
     return (

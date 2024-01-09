@@ -14,7 +14,7 @@ const BigSquare: React.FC<Props> = (props) => {
            {props.squaresData?.map((square, index)=>{
                return(
                        <SmallSquare
-                        squareData = {square.hasItem}
+                        squareData = {square}
                         key = {index}
                         openSquare = {()=>{
                             props.openSquare(index);
